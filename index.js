@@ -29,6 +29,7 @@ function setColor(color) {
   }
 }
 window.addEventListener('hashchange', updateHash, false);
+window.setColor = setColor;
 updateHash();
 
 try {
