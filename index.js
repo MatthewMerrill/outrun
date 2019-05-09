@@ -19,6 +19,11 @@ function updateHash() {
     setColor(location.hash.substring(1));
   }
 }
+function receiveMessage(event) {
+  if (event.data && typeof event.data.color === 'string') {
+    this.setColor(event.data.color);
+  }
+}
 function setColor(color) {
   let root = document.documentElement;
   if (validTextColor('#' + color)) {
@@ -29,9 +34,6 @@ function setColor(color) {
   }
 }
 window.addEventListener('hashchange', updateHash, false);
+window.addEventListener('message', receiveMessage, false);
 window.setColor = setColor;
 updateHash();
-
-try {
-  document.domain = 'mattmerr.com';
-} catch (ignored) {}
