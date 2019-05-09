@@ -16,14 +16,16 @@ function validTextColor(stringToTest) {
 
 function updateHash() {
   if (location.hash && location.hash.length > 1) {
-    let color = location.hash.substring(1);
-    let root = document.documentElement;
-    if (validTextColor('#' + color)) {
-      root.style.setProperty('--accent', '#' + color);
-    }
-    else if (validTextColor(color)) {
-      root.style.setProperty('--accent', color);
-    }
+    setColor(location.hash.substring(1));
+  }
+}
+function setColor(color) {
+  let root = document.documentElement;
+  if (validTextColor('#' + color)) {
+    root.style.setProperty('--accent', '#' + color);
+  }
+  else if (validTextColor(color)) {
+    root.style.setProperty('--accent', color);
   }
 }
 window.addEventListener('hashchange', updateHash, false);
