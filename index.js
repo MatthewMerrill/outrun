@@ -29,3 +29,6 @@ function updateHash() {
 window.addEventListener('hashchange', updateHash, false);
 updateHash();
 
+try {
+  document.domain = 'mattmerr.com';
+} catch (ignored) {}
