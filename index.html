@@ -8,11 +8,15 @@
     <div id="sunset"></div>
   </body>
   <script>
-    if (location.hash && location.hash.length > 1) {
-      let color = location.hash.substring(1);
-      let root = document.documentElement;
-      console.log(root, color);
-      root.style.setProperty('--accent', color);
+    function updateHash() {
+      if (location.hash && location.hash.length > 1) {
+        let color = location.hash.substring(1);
+        let root = document.documentElement;
+        console.log(root, color);
+        root.style.setProperty('--accent', color);
+      }
     }
+    window.addEventListener('hashchange', updateHash, false);
+    updateHash();
   </script>
 </html>
