@@ -22,7 +22,9 @@ iframe#outrun {
   position: fixed;
   top: 0;
   left: 0;
-  zIndex: -99;
+  z-index: -99;
+  margin: 0;
+  padding: 0;
 }
 ```
 
