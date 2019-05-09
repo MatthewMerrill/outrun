@@ -1,5 +1,8 @@
 <html>
-  <link rel="stylesheet" href="./index.scss"/>
+  <head>
+    <link rel="stylesheet" href="./index.scss"/>
+    <title>OUTRUN</title>
+  </head>
   <body>
     <div id="floor-wrap">
       <div id="floor"></div>
@@ -7,16 +10,5 @@
     <div id="floor-fade"></div>
     <div id="sunset"></div>
   </body>
-  <script>
-    function updateHash() {
-      if (location.hash && location.hash.length > 1) {
-        let color = location.hash.substring(1);
-        let root = document.documentElement;
-        console.log(root, color);
-        root.style.setProperty('--accent', color);
-      }
-    }
-    window.addEventListener('hashchange', updateHash, false);
-    updateHash();
-  </script>
+  <script src="./index.js"></script>
 </html>
