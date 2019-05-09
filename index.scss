@@ -1,5 +1,10 @@
-$bkgd: #010801;
-$accent: red;
+:root {
+  --bkgd: black;
+  --accent: rebeccapurple;
+}
+
+$bkgd: var(--bkgd);
+$accent: var(--accent);
 
 $x-rot: 70deg;
 
