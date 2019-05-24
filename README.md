@@ -29,11 +29,13 @@ iframe#outrun {
 ```
 
 ## Configuring color
-Add the color to the hash location parameter! Any of these URLs will work:
+Add the color as a parameter to the query string! Any of these URLs will work:
 
  - https://outrun.mattmerr.com/
- - https://outrun.mattmerr.com/#red
- - https://outrun.mattmerr.com/#green
- - https://outrun.mattmerr.com/#rgb(128,64,32)
- - https://outrun.mattmerr.com/##333
- - https://outrun.mattmerr.com/##DEADBEEF
+ - https://outrun.mattmerr.com/?color=red
+ - https://outrun.mattmerr.com/?color=green
+ - https://outrun.mattmerr.com/?color=rgb(128,64,32)
+ - https://outrun.mattmerr.com/?color=#333
+ - https://outrun.mattmerr.com/?color=#DEADBEEF
+ - https://outrun.mattmerr.com/?rainbow=true
+ 
