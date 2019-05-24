@@ -1,3 +1,5 @@
+import queryString from 'query-string';
+
 // https://stackoverflow.com/a/16994164/3188059
 function validTextColor(stringToTest) {
     //Alter the following conditions according to your need.
@@ -19,6 +21,19 @@ function updateHash() {
     setColor(location.hash.substring(1));
   }
 }
+
+function updateQuery() {
+  if (location.search && location.search.length > 1) {
+    let query = queryString.parse(location.search);
+    if (query.rainbow !== undefined) {
+      setRainbow(query.rainbow === 'true');
+    }
+    if (query.color !== undefined) {
+      setColor(query.color);
+    }
+  }
+}
+
 function receiveMessage(event) {
   if (event.data && typeof event.data.color === 'string') {
     this.setColor(event.data.color);
@@ -33,7 +48,16 @@ function setColor(color) {
     root.style.setProperty('--accent', color);
   }
 }
+function setRainbow(isRainbow) {
+  if (isRainbow) {
+    document.body.parentElement.setAttribute('rainbow', true);
+  }
+  else {
+    document.body.parentElement.removeAttribute('rainbow');
+  }
+}
 window.addEventListener('hashchange', updateHash, false);
 window.addEventListener('message', receiveMessage, false);
 window.setColor = setColor;
 updateHash();
+updateQuery();

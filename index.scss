@@ -18,6 +18,18 @@ html, body {
 
 html {
   background: $bkgd;
+  filter: hue-rotate(0deg);
+}
+html[rainbow] {
+  animation: rainbow 4s infinite;
+}
+@keyframes rainbow {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(180deg);
+  }
 }
 
 #floor-wrap {
